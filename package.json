@@ -19,7 +19,8 @@
       "lint": "eslint .",
       "fix": "eslint . --fix",
       "jest": "jest --verbose --runInBand --passWithNoTests",
-      "test:unit": "yarn jest"
+      "test:unit": "yarn jest tests/unit",
+      "test:integration": "yarn jest tests/integration"
     }
   }
   
