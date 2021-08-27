@@ -15,9 +15,8 @@ const parseRedirects = async (inputFile) => {
   const lines = await readLines(inputFile)
 
   lines.forEach((line) => {
-    const parts = line.split(',')
-    const source = parseSource(parts[0])
-    const destination = parseDestination(parts[1])
+    const source = parseSource(line[0])
+    const destination = parseDestination(line[1])
 
     if (source !== destination) {
       redirects.push({

@@ -13,7 +13,8 @@ async function readLines(file) {
 
   // eslint-disable-next-line no-restricted-syntax
   for await (const line of rl) {
-    result.push(line)
+    const parts = line.split(',')
+    result.push(parts)
   }
 
   return result
