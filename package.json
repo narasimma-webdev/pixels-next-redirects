@@ -1,0 +1,25 @@
+{
+    "name": "pixels-next-redirects",
+    "version": "1.0.0",
+    "description": "Build Next.js redirects from a CSV file",
+    "main": "src/index.js",
+    "repository": "https://github.com/pixelshelsinki/pixels-next-redirects",
+    "author": "stscoundrel <silvennoinen.sampo@gmail.com>",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {},
+    "devDependencies": {
+      "eslint": "^7.32.0",
+      "eslint-config-airbnb-base": "^14.2.1",
+      "eslint-plugin-import": "^2.24.1",
+      "eslint-plugin-jest": "^24.4.0",
+      "jest": "^26.6.3"
+    },
+    "scripts": {
+      "lint": "eslint .",
+      "fix": "eslint . --fix",
+      "jest": "jest --verbose --runInBand --passWithNoTests",
+      "test:unit": "yarn jest"
+    }
+  }
+  
