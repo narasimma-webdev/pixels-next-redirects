@@ -10,20 +10,26 @@ const parseDestination = (destinationLine) => {
   return destinationLine.slice(-1) !== '/' ? destinationLine : destinationLine.slice(0, -1)
 }
 
+const parseRedirect = (line) => {
+  const source = parseSource(line[0])
+  const destination = parseDestination(line[1])
+
+  return {
+    source,
+    destination,
+    permanent: true,
+  }
+}
+
 const parseRedirects = async (inputFile) => {
   const redirects = []
   const lines = await readLines(inputFile)
 
   lines.forEach((line) => {
-    const source = parseSource(line[0])
-    const destination = parseDestination(line[1])
+    const redirect = parseRedirect(line)
 
-    if (source !== destination) {
-      redirects.push({
-        source,
-        destination,
-        permanent: true,
-      })
+    if (redirect.source !== redirect.destination) {
+      redirects.push(redirect)
     }
   })
 
@@ -31,5 +37,8 @@ const parseRedirects = async (inputFile) => {
 }
 
 module.exports = {
+  parseSource,
+  parseDestination,
+  parseRedirect,
   parseRedirects,
 }
