@@ -35,10 +35,10 @@ const csvRedirects = `${__dirname}/my-redirects.csv`
 const outputFile = `${__dirname}/my-redirects.js`
 
 const createRedirectsFromMyCSV = async (input, output) => {
-    await buildRedirects(inputFile, outputFile)
+    await buildRedirects(input, output)
 }
 
-createRedirectsFromMyCSV(csvRedirects, outputfile)
+createRedirectsFromMyCSV(csvRedirects, outputFile)
 
 ```
 
